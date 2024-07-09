@@ -1,291 +1,335 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <title>Click Segurança | Segurança & Qualidade</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Click Segurança | Segurança & Qualidade">
-    <meta name="keywords" content="sistema de gestão segurança do trabalho, plataforma de qualidade em segurança, tecnologia em segurança do trabalho, gestão segurança, inspenção de segurança, inspenção online, Análise de risco, relatórios inspenções de segurança, relatórios análise de risco">
-    <meta name="author" content="CLick Segurança">
+<head>
+  <meta charset="utf-8">
+  <title>Click Segurança | Segurança & Qualidade</title>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Click Segurança | Segurança & Qualidade">
+  <meta name="keywords"
+    content="sistema de gestão segurança do trabalho, plataforma de qualidade em segurança, tecnologia em segurança do trabalho, gestão segurança, inspenção de segurança, inspenção online, Análise de risco, relatórios inspenções de segurança, relatórios análise de risco">
+  <meta name="author" content="CLick Segurança">
 
-    <!-- Favicon and Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#080032">
-    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Vendor Styles -->
-    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css"/>
-    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css"/>
+  <!-- Favicon and Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-    <!-- Main Theme Styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  <!-- Vendor Styles -->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css" />
 
-    <!-- Page loading styles -->
-    <style>
+  <!-- Main Theme Styles + Bootstrap -->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
 
+  <!-- Page loading styles -->
+  <style>
     .icon-container {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .auth-brand {
       margin-bottom: 2rem;
     }
+
     .auth-brand .logo-dark {
       display: block;
     }
+
     .auth-brand .logo-light {
       display: none;
     }
 
-      .page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
-      .dark-mode .page-loading {
-        background-color: #0b0f19;
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
-      .page-loading.active {
-        opacity: 1;
-        visibility: visible;
+    }
+  </style>
+
+  <!-- Page custom styles -->
+  <style>
+    /* Spin animation */
+    @-webkit-keyframes hero-spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
-      .page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
+    }
+
+    @keyframes hero-spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
-      .page-loading.active > .page-loading-inner {
-        opacity: 1;
-      }
-      .page-loading-inner > span {
-        display: block;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #9397ad;
-      }
-      .dark-mode .page-loading-inner > span {
-        color: #fff;
-        opacity: .6;
-      }
-      .page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        border: .15em solid #b4b7c9;
-        border-right-color: transparent;
-        border-radius: 50%;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
+    }
+
+    .hero-animation-spin {
+      -webkit-animation: hero-spin 35s linear infinite;
+      animation: hero-spin 35s linear infinite;
+    }
+
+    /* Fade animation */
+    @-webkit-keyframes hero-fade {
+
+      0%,
+      100% {
+        opacity: 0
       }
 
-      .dark-mode .page-spinner {
-        border-color: rgba(255,255,255,.4);
-        border-right-color: transparent;
+      50% {
+        opacity: 1
       }
-      @-webkit-keyframes spinner {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
+    }
+
+    @keyframes hero-fade {
+
+      0%,
+      100% {
+        opacity: 0
       }
-      @keyframes spinner {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
+
+      50% {
+        opacity: 1
       }
-    </style>
+    }
 
-       <!-- Page custom styles -->
-       <style>
+    .hero-animation-fade {
+      -webkit-animation: hero-fade 4s ease-in infinite;
+      animation: hero-fade 4s ease-in infinite;
+    }
 
-        /* Spin animation */
-        @-webkit-keyframes hero-spin {
-          100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes hero-spin {
-          100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-          }
-        }
-        .hero-animation-spin {
-          -webkit-animation: hero-spin 35s linear infinite;
-          animation: hero-spin 35s linear infinite;
-        }
-  
-        /* Fade animation */
-        @-webkit-keyframes hero-fade {
-          0%, 100% { opacity: 0 }
-          50% { opacity: 1 }
-        }
-        @keyframes hero-fade {
-          0%, 100% { opacity: 0 }
-          50% { opacity: 1 }
-        }
-        .hero-animation-fade {
-          -webkit-animation: hero-fade 4s ease-in infinite;
-          animation: hero-fade 4s ease-in infinite;
-        }
-        .hero-animation-delay-1,
-        .hero-animation-delay-2,
-        .hero-animation-delay-3 {
-          opacity: 0;
-        }
-        .hero-animation-delay-1 { animation-delay: .75s; }
-        .hero-animation-delay-2 { animation-delay: 1.5s; }
-        .hero-animation-delay-3 { animation-delay: 2s; }
-      </style>
+    .hero-animation-delay-1,
+    .hero-animation-delay-2,
+    .hero-animation-delay-3 {
+      opacity: 0;
+    }
 
-    <!-- Theme mode -->
-    <script>
-      let mode = window.localStorage.getItem('mode'),
-          root = document.getElementsByTagName('html')[0];
-      if (mode !== null && mode === 'dark') {
-        root.classList.add('dark-mode');
-      } else {
-        root.classList.remove('dark-mode');
-      }
-    </script>
+    .hero-animation-delay-1 {
+      animation-delay: .75s;
+    }
 
-    <!-- Page loading scripts -->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading');
-          preloader.classList.remove('active');
-          setTimeout(function () {
-            preloader.remove();
-          }, 1000);
-        };
-      })();
-    </script>
-  </head>
+    .hero-animation-delay-2 {
+      animation-delay: 1.5s;
+    }
 
-  <!-- Body -->
-  <body>
+    .hero-animation-delay-3 {
+      animation-delay: 2s;
+    }
+  </style>
 
-      <!-- Page loading spinner -->
-      <div class="page-loading active">
-        <div class="page-loading-inner">
-          <div class="page-spinner"></div><span>Loading...</span>
-        </div>
-      </div>
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
 
-      <!-- Page wrapper for sticky footer -->
-      <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
-    <main class="page-wrapper">
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
 
-      <!-- Navbar -->
-      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-      <header class="header navbar navbar-expand-lg position-absolute sticky-top">
-        <div class="container px-3">
-   
-          <div class="auth-brand">
-            <a href="index.html" class="logo-light navbar-brand pe-3 d-light-mode-none">
-              <img src="assets/img/logo_menu_anc_consulte.svg"  width="150" alt="Consulte" >
-            </a>
-            <a href="index.html" class="logo-dark navbar-brand pe-3 d-dark-mode-none">
-              <img src="assets/img/logo_menu_apc_consulte.svg" width="150" alt="Consulte" >
-            </a>
-          </div>
+<!-- Body -->
 
-          <div id="navbarNav" class="offcanvas offcanvas-end">
-            <div class="offcanvas-header border-bottom">
-              <h5 class="offcanvas-title">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a href="index.html" class="nav-link" data-scroll>Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Benefícios</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#beneficios" class="dropdown-item" data-scroll>Benefícios</a></li>
-                    <li><a href="#consulte-app" class="dropdown-item" data-scroll>Click Segurança</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="#modulos" class="nav-link" data-scroll>Módulos</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contato" class="nav-link" data-scroll>Contato</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contato" class="nav-link" data-scroll>Termos de Uso</a>
-                </li>
-              </ul>
-            </div>
-            <div class="offcanvas-header border-top">
-              <a href="https://www.globalcad.com.br/" class="btn btn-primary w-100" target="_blank" rel="noopener">
-                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
-                &nbsp;Implantar
-              </a>
-            </div>      
-          </div>
+<body>
 
-          <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
-            <input type="checkbox" class="form-check-input" id="theme-mode">
-            <label class="form-check-label d-none d-sm-block" for="theme-mode">Claro</label>
-            <label class="form-check-label d-none d-sm-block" for="theme-mode">Escuro</label>
-          </div>
-          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a href="https://www.globalcad.com.br/" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
-            <i class="bx bxs-rocket fs-5 lh-1 me-1"></i>
-            &nbsp;Implantar
+  <!-- Page loading spinner -->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+    <!-- Navbar -->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+    <header class="header navbar navbar-expand-lg position-absolute sticky-top">
+      <div class="container px-3">
+
+        <div class="auth-brand">
+          <a href="index.html" class="logo-light navbar-brand pe-3 d-light-mode-none">
+            <img src="assets/img/logo_menu_anc_consulte.svg" width="150" alt="Consulte">
+          </a>
+          <a href="index.html" class="logo-dark navbar-brand pe-3 d-dark-mode-none">
+            <img src="assets/img/logo_menu_apc_consulte.svg" width="150" alt="Consulte">
           </a>
         </div>
-      </header> 
 
-     <!-- Hero -->
-     <section class="container py-5 mt-5 mt-md-4 mb-md-3 mb-lg-4 mb-xl-5">
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link" data-scroll>Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Benefícios</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#beneficios" class="dropdown-item" data-scroll>Benefícios</a></li>
+                  <li><a href="#consulte-app" class="dropdown-item" data-scroll>Click Segurança</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#modulos" class="nav-link" data-scroll>Módulos</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contato" class="nav-link" data-scroll>Contato</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contato" class="nav-link" data-scroll>Termos de Uso</a>
+              </li>
+            </ul>
+          </div>
+          <div class="offcanvas-header border-top">
+            <a href="https://www.globalcad.com.br/" class="btn btn-primary w-100" target="_blank" rel="noopener">
+              <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+              &nbsp;Implantar
+            </a>
+          </div>
+        </div>
+
+        <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+          <input type="checkbox" class="form-check-input" id="theme-mode">
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Claro</label>
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Escuro</label>
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://www.globalcad.com.br/" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
+          target="_blank" rel="noopener">
+          <i class="bx bxs-rocket fs-5 lh-1 me-1"></i>
+          &nbsp;Implantar
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="container py-5 mt-5 mt-md-4 mb-md-3 mb-lg-4 mb-xl-5">
       <div class="row align-items-center align-items-lg-stretch mb-2 mb-sm-3">
 
         <!-- Parallax gfx -->
-        <div class="col-xl-7 col-md-6 d-flex justify-content-center justify-content-md-end overflow-hidden order-md-2 mt-n5 mt-sm-n4 mt-md-0">
+        <div
+          class="col-xl-7 col-md-6 d-flex justify-content-center justify-content-md-end overflow-hidden order-md-2 mt-n5 mt-sm-n4 mt-md-0">
           <div class="position-relative mt-5" style="max-width: 660px;">
-            <div class="bg-gradient-primary position-absolute start-0 bottom-0 w-100 rounded-3 opacity-15" style="height: 95%;"></div>
+            <div class="bg-gradient-primary position-absolute start-0 bottom-0 w-100 rounded-3 opacity-15"
+              style="height: 95%;"></div>
             <div class="parallax zindex-2">
               <div class="parallax-layer zindex-2 mb-n3" data-depth="0.1">
                 <img src="assets/img/landing/app-showcase/hero/layer01.png" alt="Device">
@@ -304,16 +348,20 @@
         <div class="col-xl-5 col-md-6 d-flex flex-column order-md-1">
           <div class="text-center text-md-start pt-4 pt-sm-5 pt-xl-0 mt-2 mt-sm-0 mt-lg-auto">
             <h1 class="display-4 mb-4">Trabalho Seguro, Empresa Saudável</h1>
-            <p class="fs-lg mb-0 d-md-none d-xl-block">Acidentes de trabalho afetam milhões, mas custam trilhões. Invista em prevenção para um futuro mais seguro.</p>
-            <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start pt-2 mt-4 mt-md-5">
-             
-              <a href="https://play.google.com/store/apps/details?id=globalcad.cemigseg2&hl=en" target="_blank" class="btn btn-dark btn-lg px-3 py-2 mb-3">
+            <p class="fs-lg mb-0 d-md-none d-xl-block">Acidentes de trabalho afetam milhões, mas custam trilhões.
+              Invista em prevenção para um futuro mais seguro.</p>
+            <div
+              class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start pt-2 mt-4 mt-md-5">
+
+              <a href="https://play.google.com/store/apps/details?id=globalcad.cemigseg2&hl=en" target="_blank"
+                class="btn btn-dark btn-lg px-3 py-2 mb-3">
                 <img src="assets/img/market/googleplay-light.svg" class="light-mode-img" width="139" alt="Google Play">
                 <img src="assets/img/market/googleplay-dark.svg" class="dark-mode-img" width="139" alt="Google Play">
               </a>
             </div>
           </div>
-          <div class="d-sm-flex d-md-none d-lg-flex justify-content-center justify-content-md-start mt-auto pt-3 pt-md-0">
+          <div
+            class="d-sm-flex d-md-none d-lg-flex justify-content-center justify-content-md-start mt-auto pt-3 pt-md-0">
             <div class="d-flex align-items-center w-100 pe-xxl-2 mb-2 mb-md-0">
               <div class="h1 mb-0">140k+</div>
               <div class="ps-2 ms-1">acessos diariamente</div>
@@ -328,346 +376,414 @@
       </div>
     </section>
 
+    <section class="bg-secondary py-5">
+      <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+          <h2 class="h1 mb-4">Click Segurança</h2>
+          <p class="fs-5 text-muted text-center mb-4 mb-lg-5"> O Click Segurança é uma solução digital integrada,
+            projetada para a gestão eficiente da segurança do trabalho tanto em campo quanto no escritório. Ideal para
+            empresas que desejam não apenas atender, mas superar as normas de segurança, promovendo ambientes de
+            trabalho
+            seguros e eficientes.</p>
+        </div>
 
-       <!-- Gallery (carousels) -->
-       <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
-        <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Click Segurança</h2>
-        <div class="pb-2 pb-sm-3 pb-md-4">
+        <!-- Steps -->
+        <div class="steps steps-center steps-sm steps-horizontal-lg"
+          style="--si-steps-number-size-sm: 1.5rem; --si-steps-number-inner-size-sm: 1rem; --si-steps-number-bg: rgba(99,102,241,.2); --si-steps-number-inner-bg: #6366f1;">
 
-          <!-- LTR -->
-          <div class="swiper" data-swiper-options='{
-            "loop": true,
-            "grabCursor": false,
-            "centeredSlides": true,
-            "autoplay": {
-              "delay": 0,
-              "disableOnInteraction": false
-            },
-            "freeMode": true,
-            "speed": 38000,
-            "freeModeMomentum": false,
-            "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
-              "500": {
-                "spaceBetween": 16
-              },
-              "768": {
-                "slidesPerView": 2,
-                "spaceBetween": 24
-              }
-            }
-          }'>
-            <div class="swiper-wrapper">
-
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/1.jpg" alt="Gallery image" class="rounded-3">
-              </div>
-
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/2.jpg" alt="Gallery image" class="rounded-3">
-              </div>
-
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/3.jpg" alt="Gallery image" class="rounded-3">
-              </div>
+          <!-- Step -->
+          <div class="step w-100 mx-auto" style="max-width: 26rem;">
+            <div class="step-number">
+              <div class="step-number-inner"></div>
+            </div>
+            <div class="step-body">
+              <p class="mb-0">Ideal para empresas que buscam não apenas atender, mas superar as normas de segurança, promovendo ambientes de trabalho seguros e eficientes</p>
             </div>
           </div>
 
-          <!-- RTL -->
-          <div class="swiper mt-md-4 mt-sm-3 mt-2" dir="rtl" data-swiper-options='{
-            "loop": true,
-            "grabCursor": false,
-            "centeredSlides": true,
-            "autoplay": {
-              "delay": 0,
-              "disableOnInteraction": false
-            },
-            "freeMode": true,
-            "speed": 38000,
-            "freeModeMomentum": false,
-            "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
-              "500": {
-                "spaceBetween": 16
-              },
-              "768": {
-                "slidesPerView": 2,
-                "spaceBetween": 24
-              }
-            }
-          }'>
-            <div class="swiper-wrapper">
+          <!-- Step -->
+          <div class="step w-100 mx-auto" style="max-width: 26rem;">
+            <div class="step-number">
+              <div class="step-number-inner"></div>
+            </div>
+            <div class="step-body">
+              <p class="mb-0">Operação em múltiplas plataformas (web & mobile)</p>
+            </div>
+          </div>
 
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/4.jpg" alt="Gallery image" class="rounded-3">
-              </div>
+          <!-- Step -->
+          <div class="step w-100 mx-auto" style="max-width: 26rem;">
+            <div class="step-number">
+              <div class="step-number-inner"></div>
+            </div>
+            <div class="step-body">
+              <p class="mb-0">Acessada por mais de 140 mil usuários diariamente</p>
+            </div>
+          </div>
 
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/5.jpg" alt="Gallery image" class="rounded-3">
-              </div>
-
-              <!-- Item -->
-              <div class="swiper-slide">
-                <img src="assets/img/6.jpg" alt="Gallery image" class="rounded-3">
-              </div>
+          <!-- Step -->
+          <div class="step w-100 mx-auto" style="max-width: 26rem;">
+            <div class="step-number">
+              <div class="step-number-inner"></div>
+            </div>
+            <div class="step-body">
+              <p class="mb-0">Validada e utilizada em múltiplos setores / indústrias</p>
             </div>
           </div>
         </div>
       </section>
+    </section>
 
+    <!-- Gallery (carousels) -->
+    <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+      <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Telas do sistema</h2>
+      <div class="pb-2 pb-sm-3 pb-md-4">
+
+        <!-- LTR -->
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/1.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/2.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/3.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+          </div>
+        </div>
+
+        <!-- RTL -->
+        <div class="swiper mt-md-4 mt-sm-3 mt-2" dir="rtl" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/4.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/5.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/6.jpg" alt="Gallery image" class="rounded-3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Use cases (Tabs) -->
+    <section class="container pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5">
+      <h2 class="h1 text-center pb-3 pb-lg-4">Módulos</h2>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs flex-nowrap justify-content-lg-center overflow-auto pb-2 mb-3 mb-lg-4" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap active" id="project-management-tab" data-bs-toggle="tab" data-bs-target="#project-management" type="button" role="tab" aria-controls="project-management" aria-selected="true">
+            <i class="bx bxs-mobile fs-lg opacity-60 me-2"></i>
+            APP Mobile
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="remote-work-tab" data-bs-toggle="tab" data-bs-target="#remote-work" type="button" role="tab" aria-controls="remote-work" aria-selected="false">
+            <i class="bx bxs-user fs-lg opacity-60 me-2"></i>
+            Administrador
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="product-release-tab" data-bs-toggle="tab" data-bs-target="#product-release" type="button" role="tab" aria-controls="product-release" aria-selected="false">
+            <i class="bx bxs-devices fs-lg opacity-60 me-2"></i>
+            Módulo Web
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="campaign-planning-tab" data-bs-toggle="tab" data-bs-target="#campaign-planning" type="button" role="tab" aria-controls="campaign-planning" aria-selected="false">
+            <i class="bx bxs-bar-chart-square fs-lg opacity-60 me-2"></i>
+            Business Inteligence
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content bg-secondary rounded-3 py-4">
+
+        <!-- Project Management -->
+        <div class="tab-pane fade show active" id="project-management" role="tabpanel" aria-labelledby="project-management-tab">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+              <h3 class="mb-lg-4">APP Mobile</h3>
+              <p>Vestibulum nunc lectus auctor quis. Natoque lectus tortor lacus, eu. Nunc feugiat nisl maecenas nulla hac morbi. Vitae, donec facilisis sed nunc netus. Venenatis posuere faucibus enim est. Vel dignissim morbi blandit morbi tellus. Arcu ullamcorper quis enim.</p>
+            </div>
+            <div class="col-lg-6 col-md-7 mt-md-4">
+              <img src="assets/img/landing/saas-1/use-cases/01.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Remote Work -->
+        <div class="tab-pane fade" id="remote-work" role="tabpanel" aria-labelledby="remote-work-tab">
+          <div class="row align-items-center pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+              <h3 class="mb-lg-4">Administrador</h3>
+              <p>Ut ornare quisque blandit condimentum nec viverra habitant non. Consequat id leo bibendum enim, fringilla pulvinar volutpat fames. Ut fames ut sed lobortis nulla. In dui enim et pharetra gravida diam semper lectus tellus. Faucibus mi convallis.</p>
+            </div>
+            <div class="col-lg-6 col-md-7 mt-md-4">
+              <img src="assets/img/landing/saas-1/use-cases/02.png" class="d-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Release -->
+        <div class="tab-pane fade" id="product-release" role="tabpanel" aria-labelledby="product-release-tab">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 pe-sm-4 pe-md-0 ps-sm-4 ps-lg-0">
+            <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+              <h3 class="mb-lg-4">Módulo Web</h3>
+              <p>Fames netus pretium massa lobortis sit metus et. Sit risus odio fermentum hac fames enim, ac, in. Neque lacus, consequat hendrerit potenti in tristique dictum. Tortor nec lorem et venenatis facilisis risus viverra nunc, eu. Eget suscipit vel amet.</p>
+            </div>
+            <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
+              <img src="assets/img/landing/saas-1/use-cases/03.png" class="d-block mb-lg-2 mx-auto me-md-0" width="525" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Campaign Planning -->
+        <div class="tab-pane fade" id="campaign-planning" role="tabpanel" aria-labelledby="campaign-planning-tab">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 pe-sm-4 pe-md-0 ps-sm-4 ps-lg-0">
+            <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+              <h3 class="mb-lg-4">Business Inteligence</h3>
+              <p>Diam bibendum scelerisque vel mauris magna. Iaculis interdum tincidunt eget nibh purus. Aliquet at sit morbi nisi volutpat fermentum scelerisque. Enim tincidunt eros sodales integer sapien. Eu ullamcorper egestas odio nunc faucibus. Sapien eu nunc sed facilisi luctus ac.</p>
+            </div>
+            <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
+              <img src="assets/img/landing/saas-1/use-cases/04.png" class="d-block mb-lg-2 mx-auto me-md-0" width="545" alt="Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
     
-      <!-- Use cases (Tabs) -->
-      <section id="modulos" class="container pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5">
-        <h2 class="h1 text-center pb-3 pb-lg-4">Módulos</h2>
-        
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs d-flex col-lg-9 mx-auto justify-content-lg-center text-center overflow-auto" role="tablist">
-          <li class="nav-item flex-fill" role="presentation">
-            <button class="nav-link text-nowrap active" id="academico-tab" data-bs-toggle="tab" data-bs-target="#academico" type="button" role="tab" aria-controls="academico" aria-selected="true">
-              <i class="bx bxs-mobile fs-lg opacity-60 me-2"></i>
-              APP Mobile
-            </button>
-          </li>
-          <li class="nav-item flex-fill" role="presentation">
-            <button class="nav-link text-nowrap" id="alimentacao-tab" data-bs-toggle="tab" data-bs-target="#alimentacao" type="button" role="tab" aria-controls="product-release" aria-selected="false">
-              <i class="bx bxs-user fs-lg opacity-60 me-2"></i>
-              Administrador
-            </button>
-          </li>
-          <li class="nav-item flex-fill" role="presentation">
-            <button class="nav-link text-nowrap" id="biblioteca-tab" data-bs-toggle="tab" data-bs-target="#biblioteca" type="button" role="tab" aria-controls="remote-work" aria-selected="false">
-              <i class="bx bxs-devices fs-lg opacity-60 me-2"></i>
-              Módulo Web
-            </button>
-          </li>
-          <li class="nav-item flex-fill" role="presentation">
-            <button class="nav-link text-nowrap" id="diario-eletronico-tab" data-bs-toggle="tab" data-bs-target="#diario-eletronico" type="button" role="tab" aria-controls="diario-eletronico" aria-selected="false">
-              <i class="bx bxs-bar-chart-square fs-lg opacity-60 me-2"></i>
-              Business Inteligence
-            </button>
-          </li>
-        </ul>
+    <!-- Benefícios (Icon + Text) -->
+    <section class="container pt-4 pb-5 py-lg-5" id="beneficios">
+      <h2 class="h1 text-center pt-1 pt-md-3 pt-lg-4 pb-3 pb-md-4 mb-0 mb-lg-3">Benefícios</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 g-lg-3 g-xl-4 pb-md-3 pb-lg-5">
 
-        <div class="tab-content bg-secondary rounded-3 py-4">
-
-          <div class="tab-pane fade show active" id="academico" role="tabpanel" aria-labelledby="academico-tab">
-            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
-              <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                <h3 class="mb-lg-4">APP Mobile</h3>
-                <p>Gerencie todas as atividades acadêmicas de forma eficiente e integrada, incluindo matrícula, rematrícula, enturmação, educação inclusiva, ficha individual, boletim e integração com o Google Classroom. Otimize o processo educacional com o apoio da tecnologia.</p>
-              </div>
-              <div class="col-lg-6 col-md-7 mt-md-4">
-                <img src="assets/img/landing/saas-1/use-cases/01.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image">
-              </div>
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-map-alt fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Redução de Acidentes e Doenças Ocupacionais</h3>
+              <p class="fs-sm mb-0">Otimize os processos de segurança e garanta um ambiente de trabalho seguro e
+                eficiente.</p>
             </div>
           </div>
+        </div>
 
-          <div class="tab-pane fade" id="alimentacao" role="tabpanel" aria-labelledby="alimentacao-tab">
-            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 pe-sm-4 pe-md-0 ps-sm-4 ps-lg-0">
-              <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                <h3 class="mb-lg-4">Administrador</h3>
-                <p>Gerencie a alimentação escolar, incluindo a preparação de cardápios, balanceamento de refeições e acompanhamento nutricional, respeitando as necessidades dos alunos e contribuindo para a saúde e o bem-estar de todos.</p>
-              </div>
-              <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
-                <img src="assets/img/landing/saas-1/use-cases/03.png" class="d-block mb-lg-2 mx-auto me-md-0" width="525" alt="Image">
-              </div>
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-dollar-circle fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Redução de Custos</h3>
+              <p class="fs-sm mb-0">Elimine redigitação e arquivamento físico, reduza afastamentos de mão-de-obra,
+                economize tempo, e mais.</p>
             </div>
           </div>
+        </div>
 
-          <div class="tab-pane fade" id="biblioteca" role="tabpanel" aria-labelledby="biblioteca-tab">
-            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 pe-sm-4 pe-md-0 ps-sm-4 ps-lg-0">
-              <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                <h3 class="mb-lg-4">Módulo Web</h3>
-                <p>Com o módulo de Biblioteca, você terá o controle total do acervo da sua instituição de forma simples e eficiente. Organize e gerencie todo o material bibliográfico com facilidade, desde livros até materiais audiovisuais. Além disso, mantenha um registro atualizado de empréstimos e devoluções, para garantir a disponibilidade do material aos alunos e professores sempre que necessário. Assim a sua instituição terá mais agilidade, praticidade e segurança no controle de seu acervo. Experimente agora mesmo!</p>
-              </div>
-              <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
-                <img src="assets/img/landing/saas-1/use-cases/04.png" class="d-block mb-lg-2 mx-auto me-md-0" width="545" alt="Image">
-              </div>
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-group fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Adoção Por Terceiros</h3>
+              <p class="fs-sm mb-0">O Click pode ser operado por terceiros que prestam serviço para sua empresa,
+                massificando os benefícios.</p>
             </div>
           </div>
-      
-          <div class="tab-pane fade" id="diario-eletronico" role="tabpanel" aria-labelledby="diario-eletronico-tab">
-            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 pe-sm-4 pe-md-0 ps-sm-4 ps-lg-0">
-              <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                <h3 class="mb-lg-4">Business Inteligence</h3>
-                <p>Ofereça um portal do professor para lançamento de notas, faltas e conteúdos, com acesso fácil pelo celular ou notebook. Disponibilize também um portal do aluno para consultas ao boletim escolar e maior interação entre alunos, pais e responsáveis.</p>
-              </div>
-              <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
-                <img src="assets/img/landing/saas-1/use-cases/04.png" class="d-block mb-lg-2 mx-auto me-md-0" width="545" alt="Image">
-              </div>
+        </div>
+
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-shield fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Conformidade Legal</h3>
+              <p class="fs-sm mb-0">Manter-se em conformidade com as leis evita multas, penalidades legais e custos
+                associados a processos judiciais, incluindo compensações trabalhistas.</p>
             </div>
           </div>
-        </div>    
-      </section>
-      <br>
+        </div>
 
-     <!-- Benefícios (Icon + Text) -->
-     <section class="container" id="beneficios">
-      <h2 class="h1 text-center pb-4 pb-lg-5">Benefícios</h2>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-map-alt fs-3 text-primary'></i>
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-line-chart fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Melhoria da Produtividade</h3>
+              <p class="fs-sm mb-0">Evite perdas de dias de trabalho devido a ocorrências manifestamente evitáveis,
+                maximizando a produtividade.</p>
+            </div>
           </div>
-          <h3 class="h5 pb-1 mb-2">Redução de Acidentes e Doenças Ocupacionais</h3>
-          <p class="fs-sm">Otimize os processos de segurança e garanta um ambiente de trabalho seguro e eficiente.</p>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-dollar-circle fs-3 text-primary'></i>
+
+        <!-- Item -->
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="bg-secondary rounded-3 w-auto lh-1 p-2 mt-4 ms-4 me-auto">
+              <i class="bx bx-cog fs-2 text-gradient-primary" style="padding: .375rem;"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h6">Customização Ágil para a Realidade do seu Negócio</h3>
+              <p class="fs-sm mb-0">O sistema é adaptado para a realidade do seu negócio em dias, não meses.</p>
+            </div>
           </div>
-          <h3 class="h5 pb-1 mb-2">Redução de Custos​</h3>
-          <p class="fs-sm">Elimine redigitação e arquivamento físico, reduza afastamentos de mão-de-obra, economize tempo, e mais.</p>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-group fs-3 text-primary'></i>
-          </div>
-          <h3 class="h5 pb-1 mb-2">Adoção Por Terceiros</h3>
-          <p class="fs-sm">O Click pode ser operado por terceiros que prestam serviço para sua empresa, massificando os benefícios.</p>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-shield fs-3 text-primary'></i>
-          </div>
-          <h3 class="h5 pb-1 mb-2">Conformidade Legal</h3>
-          <p class="fs-sm">Manter-se em conformidade com as leis evita multas, penalidades legais e custos associados a processos judiciais, incluindo compensações trabalhistas.</p>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-line-chart fs-3 text-primary'></i>
-          </div>
-          <h3 class="h5 pb-1 mb-2">Melhoria da Produtividade​</h3>
-          <p class="fs-sm">Evite perdas de dias de trabalho devido a ocorrências manifestamente evitáveis, maximizando a produtividade.</p>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
-          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4 icon-container">
-            <i class='bx bx-cog fs-3 text-primary'></i>
-          </div>
-          <h3 class="h5 pb-1 mb-2">Customização Ágil para a Realidade do seu Negócio​</h3>
-          <p class="fs-sm">O sistema é adaptado para a realidade do seu negócio em dias, não meses.</p>
-        </div>
+
       </div>
     </section>
     <br><br>
 
-      <!-- APP Features -->
-      <section id="features" class="container pt-lg-2 pt-xl-3 pb-3 pb-xl-5 mt-n2 mt-sm-0 mb-2 mb-md-4 mb-lg-5">
-        <div class="row pb-xl-3">
 
-          <!-- Parallax gfx -->
-          <div class="col-lg-5 d-none d-lg-block">
-            <div class="position-relative" style="max-width: 348px;">
-              <img src="assets/img/landing/app-showcase/features/phone.png" alt="Phone">
-              <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x" data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg" style="max-width: 348px; right: -2.75rem;">
-                <img src="assets/img/landing/app-showcase/features/card.png" alt="Card">
-              </div>
-            </div>
-          </div>
+    <!-- APP Features -->
+    <section id="features" class="container pt-lg-2 pt-xl-3 pb-3 pb-xl-5 mt-n2 mt-sm-0 mb-2 mb-md-4 mb-lg-5">
+      <div class="row pb-xl-3">
 
-          <!-- Feature list -->
-          <div id="consulte-app" class="col-lg-7">
-            <h2 class="h1 text-center text-md-start mb-4">Aplicativo Exclusivo</h2>
-            <p class="fs-lg text-muted text-center text-md-start mb-4 mb-xl-5">
-              Liberação de um aplicativo exclusivo para a empresa contratante na loja Google Play, facilitando sua localização e fortalecendo a presença digital da empresa</p>
-            <div class="row row-cols-1 row-cols-sm-2 pt-2 pt-sm-3 pt-xl-2">
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start pe-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/payments.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Easy Payments</h3>
-                    <p class="mb-0">Id mollis consectetur congue egestas egestas suspendisse blandit justo.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start ps-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/security.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Data Security</h3>
-                    <p class="mb-0">Augue pulvinar justo, fermentum fames aliquam accumsan vestibulum non.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start pe-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/statistics.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Cost Statistics</h3>
-                    <p class="mb-0">Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start ps-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/support.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Support 24/7</h3>
-                    <p class="mb-0">A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start pe-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/cashback.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Regular Cashback</h3>
-                    <p class="mb-0">Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet eleifend.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
-                <div class="d-flex align-items-start ps-xl-3">
-                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3">
-                    <img src="assets/img/landing/app-showcase/features/happy.svg" alt="Icon">
-                  </div>
-                  <div class="ps-4 ps-sm-3 ps-md-4">
-                    <h3 class="h5 pb-1 mb-2">Top Standards</h3>
-                    <p class="mb-0">Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu.</p>
-                  </div>
-                </div>
-              </div>
+        <!-- Parallax gfx -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="position-relative" style="max-width: 348px;">
+            <img src="assets/img/landing/app-showcase/features/phone.png" alt="Phone">
+            <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x"
+              data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg"
+              style="max-width: 348px; right: -2.75rem;">
+              <img src="assets/img/landing/app-showcase/features/card.png" alt="Card">
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Brands (carousel on screens < 1100px) -->
-      <section class="container py-5 mt-md-2 mt-lg-4">
-        <div class="swiper pt-2 mx-n2" data-swiper-options='{
+        <!-- Feature list -->
+        <div id="consulte-app" class="col-lg-7">
+          <h2 class="h1 text-center text-md-start mb-4">Aplicativo Exclusivo</h2>
+          <p class="fs-lg text-muted text-center text-md-start mb-4 mb-xl-5">
+            Liberação de um aplicativo exclusivo para a empresa contratante na loja Google Play, facilitando sua
+            localização e fortalecendo a presença digital da empresa</p>
+
+          <div class="steps steps-sm">
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">1</div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Cadastre / gerencie empregados</h4>
+                <p class="mb-0">Acesse Menu &rarr; Empregados e cadastre os seus empregados.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">2</div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Cadastre / gerencie usuários</h4>
+                <p class="mb-0">Acesse Menu &rarr; Usuários e crie um usuário para cada agente de inspeção e demais
+                  pessoas que usarão o sistema.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">3</div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Inspecione</h4>
+                <p class="mb-0">Acesse Menu &rarr; Inspeção Segurança e registre a sua primeira inspenção de segurança.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">4</div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Análise</h4>
+                <p class="mb-0">Acesse Menu &rarr; Inspeção Segurança e acesse um dos relatórios disponíveis.</p>
+              </div>
+            </div>
+          </div>
+
+    </section>
+
+    <!-- Brands (carousel on screens < 1100px) -->
+    <section class="container py-5 mt-md-2 mt-lg-4">
+      <div class="swiper pt-2 mx-n2" data-swiper-options='{
           "slidesPerView": 2,
           "pagination": {
             "el": ".swiper-pagination",
@@ -692,216 +808,235 @@
             }
           }
         }'>
-          <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-            <!-- Item -->
-            <div class="swiper-slide py-3">
-              <a href="https://www.globalcad.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
-                <img src="assets/img/brands/GlocalCad.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
-              </a>
-            </div>
+          <!-- Item -->
+          <div class="swiper-slide py-3">
+            <a href="https://www.globalcad.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
+              <img src="assets/img/brands/GlocalCad.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+            </a>
+          </div>
 
-            <!-- Item -->
-            <div class="swiper-slide py-3">
-              <a href="https://www.consultegeo.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
-                <img src="assets/img/brands/Geo.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
-              </a>
-            </div>
+          <!-- Item -->
+          <div class="swiper-slide py-3">
+            <a href="https://www.consultegeo.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
+              <img src="assets/img/brands/Geo.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+            </a>
+          </div>
 
-            <!-- Item -->
-            <div class="swiper-slide py-3">
-              <a href="https://www.pozzo.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
-                <img src="assets/img/brands/Pozzo.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
-              </a>
-            </div>
+          <!-- Item -->
+          <div class="swiper-slide py-3">
+            <a href="https://www.pozzo.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
+              <img src="assets/img/brands/Pozzo.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+            </a>
+          </div>
 
-            <!-- Item -->
-            <div class="swiper-slide py-3">
-              <a href="https://www.mobilehc.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
-                <img src="assets/img/brands/MobileHealthCare.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
-              </a>
-            </div>
+          <!-- Item -->
+          <div class="swiper-slide py-3">
+            <a href="https://www.mobilehc.com.br/" target="_blank" class="card card-body card-hover px-2 mx-2">
+              <img src="assets/img/brands/MobileHealthCare.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+            </a>
+          </div>
           <!-- Pagination (bullets) -->
           <div class="swiper-pagination position-relative pt-2 mt-4"></div>
         </div>
-      </section>
+    </section>
 
-      <!-- Contact -->
+    <!-- Contact -->
 
-      <section id="contato" class="container">
-        <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-lg-0">
-          <div class="row align-items-center pt-1 pb-2 py-lg-4">
-            <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 mb-4 pb-3 mb-md-0 pb-md-0">
-              <h2 class="h1 mb-lg-4">Contato</h2>
-              <p class="pb-2 pb-md-4 pb-lg-5">Por favor, preencha seus dados para que possamos entrar em contato com você em breve.</p>
-              <h3 class="mb-lg-4">Informações</h3>
-              <ul class="list-unstyled pb-3 pb-md-4 pb-lg-5 mb-2">
-                <li class="mb-2">
-                  <a href="tel:(31) 3207-1200" class="nav-link d-flex align-items-center p-0">
-                    <i class="bx bx-phone-call fs-xl text-primary me-2"></i>
-                    +55 (31) 3514-9662 
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a href="mailto:example@email.com" class="nav-link d-flex align-items-center p-0">
-                    <i class="bx bx-envelope fs-xl text-primary me-2"></i>
-                    contato@globalcad.com.br
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="nav-link d-flex align-items-center p-0">
-                    <i class="bx bx-map fs-xl text-primary me-2"></i>
-                    Av. Getúlio Vargas, 1420 | 16º Andar<br>
-                    Belo Horizonte | MG | CEP: 30.112-021
-                  </a>
-                </li>
-              </ul>
-
-              <div class="d-flex">
-                <a href="https://www.facebook.com/globalcadhq/" target="_blank" class="btn btn-icon btn-outline-secondary btn-facebook me-3">
-                  <i class="bx bxl-facebook"></i>
+    <section id="contato" class="container">
+      <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-lg-0">
+        <div class="row align-items-center pt-1 pb-2 py-lg-4">
+          <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 mb-4 pb-3 mb-md-0 pb-md-0">
+            <h2 class="h1 mb-lg-4">Contato</h2>
+            <p class="pb-2 pb-md-4 pb-lg-5">Por favor, preencha seus dados para que possamos entrar em contato com você
+              em breve.</p>
+            <h3 class="mb-lg-4">Informações</h3>
+            <ul class="list-unstyled pb-3 pb-md-4 pb-lg-5 mb-2">
+              <li class="mb-2">
+                <a href="tel:(31) 3207-1200" class="nav-link d-flex align-items-center p-0">
+                  <i class="bx bx-phone-call fs-xl text-primary me-2"></i>
+                  +55 (31) 3514-9662
                 </a>
-                <a href="https://www.linkedin.com/company/globalcad-br/" target="_blank" class="btn btn-icon btn-outline-secondary btn-linkedin me-3">
-                  <i class="bx bxl-linkedin"></i>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:example@email.com" class="nav-link d-flex align-items-center p-0">
+                  <i class="bx bx-envelope fs-xl text-primary me-2"></i>
+                  contato@globalcad.com.br
                 </a>
-              </div>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="nav-link d-flex align-items-center p-0">
+                  <i class="bx bx-map fs-xl text-primary me-2"></i>
+                  Av. Getúlio Vargas, 1420 | 16º Andar<br>
+                  Belo Horizonte | MG | CEP: 30.112-021
+                </a>
+              </li>
+            </ul>
+
+            <div class="d-flex">
+              <a href="https://www.facebook.com/globalcadhq/" target="_blank"
+                class="btn btn-icon btn-outline-secondary btn-facebook me-3">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/globalcad-br/" target="_blank"
+                class="btn btn-icon btn-outline-secondary btn-linkedin me-3">
+                <i class="bx bxl-linkedin"></i>
+              </a>
             </div>
-            <div class="col-lg-5 col-md-6 offset-xl-1">
-              <div class="card border-0 shadow-sm p-sm-2">
-                <form class="card-body needs-validation" novalidate>
-                  <div class="mb-4">
-                    <label for="nome" class="form-label fs-base">Nome completo</label>
-                    <input type="text" id="nome" class="form-control form-control-lg" required>
-                    <div class="invalid-feedback">Por favor, insira seu nome!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="email" class="form-label fs-base">E-mail</label>
-                    <input type="email" id="email" class="form-control form-control-lg" required>
-                    <div class="invalid-feedback">Por favor, forneça um endereço de e-mail válido!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="telefone" class="form-label fs-base">Telefone</label>
-                    <input type="tel" id="telefone" class="form-control form-control-lg" required>
-                    <div class="invalid-feedback">Insira seu telefone de contato!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="empresa" class="form-label fs-base">Empresa</label>
-                    <input type="text" id="empresa" class="form-control form-control-lg" required>
-                    <div class="invalid-feedback">Insira o nome da Empresa!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="cargo" class="form-label fs-base">Cargo</label>
-                    <input type="text" id="cargo" class="form-control form-control-lg" required>
-                    <div class="invalid-feedback">Insira seu cargo!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="estado" class="form-label fs-base">Estado</label>
-                    <select id="estado" name="estado" class="form-select form-select-lg"></select>
-                    <div class="invalid-feedback">Selecione seu Estado!</div>
-                  </div>
-                  <div class="mb-4">
-                    <label for="cidade" class="form-label fs-base">Cidade</label>
-                    <select id="cidade" name="cidade" class="form-select form-select-lg"></select>
-                    <div class="invalid-feedback">Selecione sua Cidade!</div>
-                  </div>
-                  <button type="submit" class="btn btn-primary shadow-primary btn-lg">Enviar</button>
-                </form>
-              </div>
+          </div>
+          <div class="col-lg-5 col-md-6 offset-xl-1">
+            <div class="card border-0 shadow-sm p-sm-2">
+              <form class="card-body needs-validation" novalidate>
+                <div class="mb-4">
+                  <label for="nome" class="form-label fs-base">Nome completo</label>
+                  <input type="text" id="nome" class="form-control form-control-lg" required>
+                  <div class="invalid-feedback">Por favor, insira seu nome!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="email" class="form-label fs-base">E-mail</label>
+                  <input type="email" id="email" class="form-control form-control-lg" required>
+                  <div class="invalid-feedback">Por favor, forneça um endereço de e-mail válido!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="telefone" class="form-label fs-base">Telefone</label>
+                  <input type="tel" id="telefone" class="form-control form-control-lg" required>
+                  <div class="invalid-feedback">Insira seu telefone de contato!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="empresa" class="form-label fs-base">Empresa</label>
+                  <input type="text" id="empresa" class="form-control form-control-lg" required>
+                  <div class="invalid-feedback">Insira o nome da Empresa!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="cargo" class="form-label fs-base">Cargo</label>
+                  <input type="text" id="cargo" class="form-control form-control-lg" required>
+                  <div class="invalid-feedback">Insira seu cargo!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="estado" class="form-label fs-base">Estado</label>
+                  <select id="estado" name="estado" class="form-select form-select-lg"></select>
+                  <div class="invalid-feedback">Selecione seu Estado!</div>
+                </div>
+                <div class="mb-4">
+                  <label for="cidade" class="form-label fs-base">Cidade</label>
+                  <select id="cidade" name="cidade" class="form-select form-select-lg"></select>
+                  <div class="invalid-feedback">Selecione sua Cidade!</div>
+                </div>
+                <button type="submit" class="btn btn-primary shadow-primary btn-lg">Enviar</button>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-
-      <!-- Footer -->
-    <footer class="footer pt-5 pb-4 pb-lg-5">
-      <div class="container pt-lg-4">
-        <div class="row pb-5">
-          <div class="col-lg-4 col-md-6">
-
-            <div class="auth-brand">
-              <a href="index.html" class="logo-light navbar-brand pe-3 d-light-mode-none">
-                <img src="assets/img/logo_vertical_anc_consulte.svg"  width="150" alt="Consulte" >
-              </a>
-              <a href="index.html" class="logo-dark navbar-brand pe-3 d-dark-mode-none">
-                <img src="assets/img/logo_vertical_apc_consulte.svg" width="150" alt="Consulte" >
-              </a>
-            </div>
-
-            <p class="fs-sm pb-lg-3 mb-4">
-              O Click Segurança é uma solução digital integrada, projetada para a gestão eficiente da segurança do trabalho tanto em campo quanto no escritório. Ideal para empresas que desejam não apenas atender, mas superar as normas de segurança, promovendo ambientes de trabalho seguros e eficientes.
-            </p>
-            <form class="needs-validation" novalidate>
-              <label for="subscr-email" class="form-label">Assine a nossa newsletter</label>
-              <div class="input-group">
-                <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
-                <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
-                <div class="invalid-tooltip position-absolute top-100 start-0">Por favor, forneça um endereço de e-mail válido.</div>
-                <button type="submit" class="btn btn-primary">Assinar</button>
-              </div>
-            </form>
-          </div>
-          <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
-            <div id="footer-links" class="row">
-              <div class="col-lg-4">
-                <h6 class="mb-2">
-                  <a href="#useful-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Menu</a>
-                </h6>
-                <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
-                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
-                    <li class="nav-item"><a href="index.html" class="nav-link d-inline-block px-0 pt-1 pb-2" data-scroll>Home</a></li>
-                    <li class="nav-item"><a href="#modulos" class="nav-link d-inline-block px-0 pt-1 pb-2" data-scroll>Módulos</a></li>
-                    <li class="nav-item"><a href="#beneficios" class="nav-link d-inline-block px-0 pt-1 pb-2" data-scroll>Benefícios</a></li>
-                    <li class="nav-item"><a href="#contato" class="nav-link d-inline-block px-0 pt-1 pb-2" data-scroll>Contato</a></li>
-                  </ul>
-                  <ul class="nav flex-column mb-2 mb-lg-0">
-                    <!-- <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Termos &amp; Condições</a></li> -->
-                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Termo de Uso &amp; Política de Privacidade</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-3">
-                <h6 class="mb-2">
-                  <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Redes</a>
-                </h6>
-                <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
-                  <ul class="nav flex-column mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="https://www.facebook.com/globalcadhq/" target="_blank" class="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
-                    <li class="nav-item"><a href="https://www.linkedin.com/company/globalcad-br/" target="_blank"class="nav-link d-inline-block px-0 pt-1 pb-2">LinkedIn</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
-          &copy; Todos os direitos reservados.
-          <a class="nav-link d-inline-block p-0" href="https://www.globalcad.com.br/" target="_blank" rel="noopener">GlobalCad</a>
-        </p>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <!-- Back to top button -->
-    <a href="#top" class="btn-scroll-top" data-scroll>
-      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Topo</span>
-      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
-    </a>
+  <!-- Footer -->
+  <footer class="footer pt-5 pb-4 pb-lg-5">
+    <div class="container pt-lg-4">
+      <div class="row pb-5">
+        <div class="col-lg-4 col-md-6">
 
-    <!-- Vendor Scripts -->
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
-    <script src="assets/vendor/rellax/rellax.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
-    
+          <div class="auth-brand">
+            <a href="index.html" class="logo-light navbar-brand pe-3 d-light-mode-none">
+              <img src="assets/img/logo_vertical_anc_consulte.svg" width="150" alt="Consulte">
+            </a>
+            <a href="index.html" class="logo-dark navbar-brand pe-3 d-dark-mode-none">
+              <img src="assets/img/logo_vertical_apc_consulte.svg" width="150" alt="Consulte">
+            </a>
+          </div>
 
-    <!-- Main Theme Script -->
-    
-    <script src="assets/js/theme.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/src/components/ibge.js"></script>
+          <p class="fs-sm pb-lg-3 mb-4">
+            O Click Segurança é uma solução digital integrada, projetada para a gestão eficiente da segurança do
+            trabalho tanto em campo quanto no escritório. Ideal para empresas que desejam não apenas atender, mas
+            superar as normas de segurança, promovendo ambientes de trabalho seguros e eficientes.
+          </p>
+          <form class="needs-validation" novalidate>
+            <label for="subscr-email" class="form-label">Assine a nossa newsletter</label>
+            <div class="input-group">
+              <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email"
+                required>
+              <i
+                class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
+              <div class="invalid-tooltip position-absolute top-100 start-0">Por favor, forneça um endereço de e-mail
+                válido.</div>
+              <button type="submit" class="btn btn-primary">Assinar</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
+          <div id="footer-links" class="row">
+            <div class="col-lg-4">
+              <h6 class="mb-2">
+                <a href="#useful-links" class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                  data-bs-toggle="collapse">Menu</a>
+              </h6>
+              <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                  <li class="nav-item"><a href="index.html" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      data-scroll>Home</a></li>
+                  <li class="nav-item"><a href="#modulos" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      data-scroll>Módulos</a></li>
+                  <li class="nav-item"><a href="#beneficios" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      data-scroll>Benefícios</a></li>
+                  <li class="nav-item"><a href="#contato" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      data-scroll>Contato</a></li>
+                </ul>
+                <ul class="nav flex-column mb-2 mb-lg-0">
+                  <!-- <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Termos &amp; Condições</a></li> -->
+                  <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Termo de Uso &amp;
+                      Política de Privacidade</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3">
+              <h6 class="mb-2">
+                <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                  data-bs-toggle="collapse">Redes</a>
+              </h6>
+              <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                <ul class="nav flex-column mb-2 mb-lg-0">
+                  <li class="nav-item"><a href="https://www.facebook.com/globalcadhq/" target="_blank"
+                      class="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
+                  <li class="nav-item"><a href="https://www.linkedin.com/company/globalcad-br/" target="_blank"
+                      class="nav-link d-inline-block px-0 pt-1 pb-2">LinkedIn</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
+        &copy; Todos os direitos reservados.
+        <a class="nav-link d-inline-block p-0" href="https://www.globalcad.com.br/" target="_blank"
+          rel="noopener">GlobalCad</a>
+      </p>
+    </div>
+  </footer>
 
-  </body>
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Topo</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+  <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+
+
+  <!-- Main Theme Script -->
+
+  <script src="assets/js/theme.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/src/components/ibge.js"></script>
+
+</body>
+
 </html>
