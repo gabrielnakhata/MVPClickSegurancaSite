@@ -35,7 +35,6 @@
 
   <!-- Page loading styles -->
   <style>
-    
     .icon-container {
       width: 60px;
       height: 60px;
@@ -224,11 +223,36 @@
       root.classList.remove('dark-mode');
     }
 
-      document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
       const paginationBullets = document.querySelectorAll('.swiper-pagination-bullet');
       paginationBullets.forEach(function (bullet) {
         bullet.style.backgroundColor = '#6366f1';
       });
+    });
+  </script>
+
+  <!-- CSS para bordas -->
+  <style>
+    .gallery-image {
+      border: 2px solid #6366f1;
+    }
+
+    .dark-mode .gallery-image {
+      border: none;
+    }
+  </style>
+
+  <!-- Script para aplicar a classe de borda no modo escuro -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let mode = window.localStorage.getItem('mode'),
+        root = document.getElementsByTagName('html')[0];
+
+      if (mode !== null && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
     });
   </script>
 
@@ -502,8 +526,7 @@
                 produtivo.</p>
             </div>
             <div class="col-lg-6 col-md-7 mt-n3 mt-md-1">
-              <img src="assets/img/web-module.png" class="d-block mb-lg-2 mx-auto me-md-0" width="500"
-                alt="Image">
+              <img src="assets/img/web-module.png" class="d-block mb-lg-2 mx-auto me-md-0" width="500" alt="Image">
             </div>
           </div>
         </div>
@@ -609,115 +632,115 @@
 
         <!-- LTR -->
         <div class="swiper" data-swiper-options='{
-        "loop": true,
-        "grabCursor": false,
-        "centeredSlides": true,
-        "autoplay": {
-          "delay": 0,
-          "disableOnInteraction": false
-        },
-        "freeMode": true,
-        "speed": 38000,
-        "freeModeMomentum": false,
-        "breakpoints": {
-          "0": {
-            "slidesPerView": 1,
-            "spaceBetween": 8
-          },
-          "500": {
-            "spaceBetween": 16
-          },
-          "768": {
-            "slidesPerView": 2,
-            "spaceBetween": 24
-          }
-        }
-      }'>
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
           <div class="swiper-wrapper">
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/1.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/1.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/2.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/2.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/3.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/3.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/4.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/4.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/5.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/5.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
           </div>
         </div>
 
         <!-- RTL -->
         <div class="swiper mt-md-4 mt-sm-3 mt-2" dir="rtl" data-swiper-options='{
-        "loop": true,
-        "grabCursor": false,
-        "centeredSlides": true,
-        "autoplay": {
-          "delay": 0,
-          "disableOnInteraction": false
-        },
-        "freeMode": true,
-        "speed": 38000,
-        "freeModeMomentum": false,
-        "breakpoints": {
-          "0": {
-            "slidesPerView": 1,
-            "spaceBetween": 8
-          },
-          "500": {
-            "spaceBetween": 16
-          },
-          "768": {
-            "slidesPerView": 2,
-            "spaceBetween": 24
-          }
-        }
-      }'>
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
           <div class="swiper-wrapper">
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/6.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/6.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/7.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/7.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/8.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/8.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/9.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/9.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/10.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/10.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
 
             <!-- Item -->
             <div class="swiper-slide">
-              <img src="assets/img/11.jpg" alt="Gallery image" class="rounded-3" style="border: 2px solid #007bff;">
+              <img src="assets/img/11.jpg" alt="Gallery image" class="rounded-3 gallery-image">
             </div>
           </div>
         </div>
@@ -726,102 +749,105 @@
     <br>
 
     <!-- APP Features -->
-<section id="features" class="container pt-lg-2 pt-xl-3 pb-3 pb-xl-5 mt-n2 mt-sm-0 mb-2 mb-md-4 mb-lg-5">
-  <div class="row pb-xl-3">
+    <section id="features" class="container pt-lg-2 pt-xl-3 pb-3 pb-xl-5 mt-n2 mt-sm-0 mb-2 mb-md-4 mb-lg-5">
+      <div class="row pb-xl-3">
 
-    <!-- Feature list -->
-    <div id="modulos" class="col-lg-7 order-lg-2">
-      <h2 class="h1 text-center text-md-start mb-4">Módulos</h2>
-      <p class="fs-lg text-muted text-center text-md-start mb-4 mb-xl-5">
-        Os "Módulos do Click Segurança" oferecem ferramentas especializadas para gerenciar inspeções, análises de risco, observações de liderança, checklists, dashboards e projetos/obras, garantindo uma gestão eficiente e integrada da segurança no ambiente de trabalho.</p>
+        <!-- Feature list -->
+        <div id="modulos" class="col-lg-7 order-lg-2">
+          <h2 class="h1 text-center text-md-start mb-4">Módulos</h2>
+          <p class="fs-lg text-muted text-center text-md-start mb-4 mb-xl-5">
+            Os "Módulos do Click Segurança" oferecem ferramentas especializadas para gerenciar inspeções, análises de
+            risco, observações de liderança, checklists, dashboards e projetos/obras, garantindo uma gestão eficiente e
+            integrada da segurança no ambiente de trabalho.</p>
 
-      <div class="steps steps-sm">
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Inspeções Segurança</h4>
-            <p class="mb-0">permite realizar e registrar inspeções de forma eficiente, garantindo a conformidade e a
-              segurança no ambiente de trabalho.</p>
+          <div class="steps steps-sm">
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Inspeções Segurança</h4>
+                <p class="mb-0">permite realizar e registrar inspeções de forma eficiente, garantindo a conformidade e a
+                  segurança no ambiente de trabalho.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Análises de Risco</h4>
+                <p class="mb-0">permite identificar, avaliar e gerenciar riscos de forma proativa, assegurando a
+                  proteção e segurança no ambiente de trabalho.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Observação Liderança</h4>
+                <p class="mb-0">facilita o monitoramento e registro de comportamentos, promovendo uma cultura de
+                  segurança e liderança eficaz no ambiente de trabalho.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Modelos Checklist</h4>
+                <p class="mb-0">permite criar, personalizar e utilizar checklists padronizados para garantir a
+                  consistência e a conformidade nas inspeções e processos de segurança.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Dashboards</h4>
+                <p class="mb-0">oferece visualizações interativas e em tempo real dos principais indicadores de
+                  segurança, facilitando a análise e tomada de decisões informadas.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Projetos / Obras</h4>
+                <p class="mb-0"> permite gerenciar e monitorar todas as atividades de segurança em projetos e obras,
+                  assegurando a conformidade e eficiência operacional.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
+              </div>
+              <div class="step-body">
+                <h4 class="mb-2">Empregados</h4>
+                <p class="mb-0"> permite gerenciar informações e registros dos trabalhadores, monitorando treinamentos,
+                  EPIs, saúde ocupacional e garantindo a conformidade com as normas de segurança.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Análises de Risco</h4>
-            <p class="mb-0">permite identificar, avaliar e gerenciar riscos de forma proativa, assegurando a
-              proteção e segurança no ambiente de trabalho.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Observação Liderança</h4>
-            <p class="mb-0">facilita o monitoramento e registro de comportamentos, promovendo uma cultura de
-              segurança e liderança eficaz no ambiente de trabalho.</p>
+
+        <!-- Parallax gfx -->
+        <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center order-lg-1">
+          <div class="position-relative" style="max-width: 348px;">
+            <img src="assets/img/landing/app-showcase/features/phone.png" alt="Phone">
+            <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x"
+              data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg"
+              style="max-width: 348px; right: -2.75rem;">
+              <img src="assets/img/landing/app-showcase/features/card.png" alt="Card">
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Modelos Checklist</h4>
-            <p class="mb-0">permite criar, personalizar e utilizar checklists padronizados para garantir a
-              consistência e a conformidade nas inspeções e processos de segurança.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Dashboards</h4>
-            <p class="mb-0">oferece visualizações interativas e em tempo real dos principais indicadores de
-              segurança, facilitando a análise e tomada de decisões informadas.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Projetos / Obras</h4>
-            <p class="mb-0"> permite gerenciar e monitorar todas as atividades de segurança em projetos e obras,
-              assegurando a conformidade e eficiência operacional.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">
-            <div class="step-number-inner text-primary"><i class="bx bxs-circle"></i></div>
-          </div>
-          <div class="step-body">
-            <h4 class="mb-2">Empregados</h4>
-            <p class="mb-0">  permite gerenciar informações e registros dos trabalhadores, monitorando treinamentos, EPIs, saúde ocupacional e garantindo a conformidade com as normas de segurança.</p>
-          </div>
-        </div>
+
       </div>
-    </div>
-
-    <!-- Parallax gfx -->
-    <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center order-lg-1">
-      <div class="position-relative" style="max-width: 348px;">
-        <img src="assets/img/landing/app-showcase/features/phone.png" alt="Phone">
-        <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x"
-          data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg"
-          style="max-width: 348px; right: -2.75rem;">
-          <img src="assets/img/landing/app-showcase/features/card.png" alt="Card">
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- Sponsors -->
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Clientes</h2>
